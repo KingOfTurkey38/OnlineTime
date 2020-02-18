@@ -72,9 +72,9 @@ class Main extends PluginBase implements Listener
                 $size = sizeof($data);
                 $pages = ceil($size / 10);
 
-                if (isset($args[1])) {
-                    if (is_numeric($args[1])) {
-                        $page = abs($args[1]);
+                if (isset($args[0])) {
+                    if (is_numeric($args[0])) {
+                        $page = abs($args[0]);
                         if ($page <= $pages) {
                             $numbers = range($page * 10 - 9, $page * 10);
                             $sender->sendMessage(C::GRAY . "Showing players with the most playtime " . C::RED . $page . C::GRAY . "/" . C::RED . $pages);
