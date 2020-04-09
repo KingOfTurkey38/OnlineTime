@@ -121,8 +121,10 @@ class Main extends PluginBase implements Listener
 
     public function onDisable(): void
     {
-        foreach ($this->joins as $key => $played) {
-            $this->saveTime($key);
+        if (!empty($this->joins)) {
+            foreach ($this->joins as $key => $played) {
+                $this->saveTime($key);
+            }
         }
     }
 }
